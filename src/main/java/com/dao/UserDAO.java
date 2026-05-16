@@ -111,10 +111,16 @@ public class UserDAO {
 
 	            u.setEmail(
 	            rs.getString("email"));
+	        
 
 	            u.setPhone_number(
 	            rs.getString("phone_number"));
-
+	          
+	         
+	            u.setDate_of_birth(
+	            		rs.getDate("date_of_birth")
+	            		.toLocalDate());
+	            
 	            u.setGender(
 	            rs.getString("gender"));
 
@@ -150,6 +156,7 @@ public class UserDAO {
 	      + "last_name=?,"
 	      + "email=?,"
 	      + "phone_number=?,"
+	      
 	      + "gender=?,"
 	      + "caste=?,"
 	      + "sub_caste=? "
