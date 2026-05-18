@@ -1,17 +1,16 @@
 package com.servlet;
-
 import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-import com.dao.FamilyDAO;
-import com.portal.entity.Family;
+import com.dao.HoroscopeDAO;
+import com.portal.entity.Horoscope;
 import com.portal.entity.User;
 
-@WebServlet("/FamilyServlet")
-public class FamilyServlet extends HttpServlet {
+@WebServlet("/HoroscopeServlet")
+public class HoroscopeServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request,
@@ -30,54 +29,43 @@ public class FamilyServlet extends HttpServlet {
         if(user == null){
 
             response.sendRedirect(
-            "Login.jsp");
+            "login.jsp");
 
             return;
         }
 
         // CREATE OBJECT
-        Family f = new Family();
+        Horoscope h =
+        new Horoscope();
 
         // SET USER
-        f.setUser_id(user);
+        h.setUser_id(user);
 
         // SET FORM DATA
-        f.setFamilyBackground(
+        h.setBirthPlace(
         request.getParameter(
-        "familyBackground"));
+        "birthPlace"));
 
-        f.setFathersOccupation(
+        h.setDateAndTimeOfBirth(
         request.getParameter(
-        "fathersOccupation"));
+        "dateAndTimeOfBirth"));
 
-        f.setMothersOccupation(
+        h.setRashi(
         request.getParameter(
-        "mothersOccupation"));
-
-        f.setNoOfBrothers(
-        request.getParameter(
-        "noOfBrothers"));
-
-        f.setNoOfSisters(
-        request.getParameter(
-        "noOfSisters"));
-
-        f.setFamilyBase(
-        request.getParameter(
-        "familyBase"));
+        "rashi"));
 
         // SAVE DATA
         boolean status =
-        FamilyDAO.addFamily(f);
-
+        HoroscopeDAO.addHoroscope(h);
         if(status){
 
-            response.sendRedirect("horoscope.jsp");
+            response.sendRedirect("lifestyle.jsp");
+
 
         }else{
 
             response.getWriter().println(
-            "<h2>Family Not Saved</h2>");
+            "<h2>Horoscope Not Saved</h2>");
         }
     }
 }

@@ -6,7 +6,8 @@ pageEncoding="UTF-8"%>
 <%@ page import="com.portal.entity.Education" %>
 <%@ page import="com.portal.entity.Career" %>
 <%@ page import="com.portal.entity.Family" %>
-
+<%@ page import="com.portal.entity.Horoscope" %>
+<%@ page import="com.portal.entity.Lifestyle" %>
 <%
 User u = (User) request.getAttribute("user");
 %>
@@ -21,6 +22,14 @@ Career career =(Career) request.getAttribute("career");
 
 <%
 Family family =(Family) request.getAttribute("family");
+%>
+
+<%
+Horoscope h = (Horoscope) request.getAttribute("horoscope");
+%>
+
+<%
+Lifestyle l = (Lifestyle) request.getAttribute("lifestyle");
 %>
 
 
@@ -99,32 +108,32 @@ body{
 
 
 <tr>
-<th>Email :</th>
+<th>Email </th>
 <td> <%=u.getEmail()%> </td>
 </tr>
 
 <tr>
-<th>Phone :</th>
+<th>Phone </th>
 <td><%=u.getPhone_number()%></td>
 </tr>
 
 <tr>
-<th>Date Of Birth :</th>
+<th>Date Of Birth </th>
 <td><%=u.getDate_of_birth()%></td>
 </tr>
 
 <tr>
-<th>Gender :</th>
+<th>Gender </th>
 <td><%=u.getGender()%></td>
 </tr>
 
 <tr>
-<th>Caste :</th>
+<th>Caste </th>
 <td><%=u.getCaste()%></td>
 </tr>
 
 <tr>
-<th>Sub Caste :</th>
+<th>Sub Caste </th>
 <td> <%=u.getSub_caste()%></td>
 </tr>
 
@@ -150,17 +159,17 @@ body{
 <table border="1" cellpadding="10">
 
 <tr>
-<th> About Education :</th>
+<th> About Education </th>
 <td><%= edu.getAboutEducation() %></td>
 </tr>
 
 <tr>
-<th>Post Graduation :</th>
+<th>Post Graduation </th>
 <td><%= edu.getPostGraduation() %></td>
 </tr>
 
 <tr>
-<th>Under Graduation :</th>
+<th>Under Graduation </th>
 <td><%= edu.getUnderGraduation() %></td>
 </tr>
 
@@ -249,6 +258,77 @@ body{
 </table>
 </div>
 </div>
+
+<!-- Horoscope Details -->
+
+<div class="card">
+<div class="info">
+<table border="1" cellpadding="10">
+
+<h2> Horoscope Details</h2>
+
+<% if(h != null){ %>
+
+<tr>
+<th>Birth Place </th>
+<td><%= h.getBirthPlace() %></td>
+</tr>
+
+
+<tr>
+<th>Date & Time Of Birth </th>
+<td><%= h.getDateAndTimeOfBirth() %></td>
+</tr>
+
+<tr>
+<th> Rashi </th>
+<td><%= h.getRashi() %></td>
+</tr>
+
+<% } else { %>
+
+<p>No Horoscope Details Found</p>
+
+<% } %>
+</table>
+</div>
+</div>
+
+
+<div class="card">
+<div class="info">
+<table border="1" cellpadding="10">
+
+<h2> Lifestyle Details</h2>
+
+<% if(h != null){ %>
+
+<tr>
+<th> EatingHabit </th>
+<td><%= l.getEatingHabit() %></td>
+</tr>
+
+
+<tr>
+<th> IsDrink </th>
+<td><%= l.getIsDrink() %></td>
+</tr>
+
+<tr>
+<th> IsSmoke </th>
+<td><%= l.getIsSmoke() %></td>
+</tr>
+
+<% } else { %>
+
+<p>No Lifestyle Details Found</p>
+
+<% } %>
+</table>
+</div>
+</div>
+
+
 
 </body>
 </html>

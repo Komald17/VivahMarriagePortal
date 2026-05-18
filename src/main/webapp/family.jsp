@@ -15,7 +15,7 @@ body{
     margin:0;
     padding:0;
     font-family:Arial;
-    background:#f5f5f5;
+    background:#ffe6eb;
 }
 
 .container{

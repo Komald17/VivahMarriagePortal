@@ -18,7 +18,7 @@
 }
 
 body{
-    background:#fff5f7;
+    background:#ffe6eb;
 }
 
 /* Navbar */

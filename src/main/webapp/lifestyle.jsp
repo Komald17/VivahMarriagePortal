@@ -1,9 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java"
+contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login Page</title>
+<title>Lifestyle Details</title>
 
 <style>
 
@@ -18,7 +21,7 @@ body{
     width:900px;
     height:500px;
     background:white;
-    margin:50px auto;
+    margin:40px auto;
     display:flex;
     border-radius:15px;
     overflow:hidden;
@@ -42,30 +45,27 @@ body{
     align-items:center;
 }
 
-.login-box{
-    width:300px;
+.form-box{
+    width:320px;
 }
 
-.login-box h2{
+h2{
     text-align:center;
-    margin-bottom:20px;
     color:#ff4d6d;
 }
 
-.input-box{
-    margin-bottom:15px;
-}
-
-.input-box input{
+input{
     width:100%;
     padding:12px;
+    margin-top:15px;
     border:1px solid #ccc;
     border-radius:5px;
 }
 
-.btn{
+button{
     width:100%;
     padding:12px;
+    margin-top:20px;
     border:none;
     background:#ff4d6d;
     color:white;
@@ -74,41 +74,54 @@ body{
     cursor:pointer;
 }
 
-.btn:hover{
+button:hover{
     background:#e63956;
 }
 
 </style>
 
 </head>
+
 <body>
 
 <div class="container">
 
-    <!-- Left Side Image -->
+    <!-- Left Image -->
+
     <div class="left">
-        <img src="login.jpg" alt="Login Image">
+
+        <img src="LS.jpg"
+             alt="Lifestyle Image">
+
     </div>
 
-    <!-- Right Side Login Form -->
+    <!-- Right Form -->
+
     <div class="right">
 
-        <div class="login-box">
+        <div class="form-box">
 
-            <h2>Vivah Marriage Portal</h2>
+            <h2>Lifestyle Details</h2>
 
-            <form action="login" method="post">
+            <form action="LifestyleServlet"
+                  method="post">
 
-                <div class="input-box">
-                    <input type="email" name="email" placeholder="Enter Email">
-                </div>
+                <input type="text"
+                       name="eatingHabit"
+                       placeholder="Eating Habit">
 
-                <div class="input-box">
-                    <input type="password" name="password_hash" placeholder="Enter Password">
-                </div>
+                <input type="text"
+                       name="isDrink"
+                       placeholder="Do You Drink ?">
 
-                <button type="submit" class="btn">
-                    Login
+                <input type="text"
+                       name="isSmoke"
+                       placeholder="Do You Smoke ?">
+
+                <button type="submit">
+
+                    Save Lifestyle
+
                 </button>
 
             </form>

@@ -1,11 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java"
+contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Education Details</title>
+
+<title>Horoscope Details</title>
 
 <style>
 
@@ -34,7 +36,7 @@ body{
 }
 
 .left img{
-    width:110%;
+    width:100%;
     height:100%;
     object-fit:cover;
 }
@@ -62,19 +64,12 @@ body{
     margin-bottom:15px;
 }
 
-.input-box input,
-.input-box textarea{
+.input-box input{
 
     width:100%;
     padding:12px;
     border:1px solid #ccc;
     border-radius:5px;
-    font-size:14px;
-}
-
-textarea{
-    resize:none;
-    height:80px;
 }
 
 .btn{
@@ -93,24 +88,10 @@ textarea{
     background:#e63956;
 }
 
-
-.back-btn{
-    padding:10px 20px;
-    background:#ff4d6d;
-    color:white;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    font-size:16px;
-}
-
-.back-btn:hover{
-    background:#e63956;
-}
-
 </style>
 
 </head>
+
 <body>
 
 <div class="container">
@@ -119,8 +100,8 @@ textarea{
 
     <div class="left">
 
-        <img src="edu.png"
-             alt="Education Image">
+        <img src="HS.avif"
+             alt="Horoscope Image">
 
     </div>
 
@@ -130,49 +111,41 @@ textarea{
 
         <div class="form-box">
 
-            <h2>Education Details</h2>
+            <h2>Horoscope Details</h2>
 
-            <form action="EducationServlet"
+            <form action="HoroscopeServlet"
                   method="post">
 
-                <!-- REMOVE USER ID -->
-
                 <div class="input-box">
 
-                    <textarea name="aboutEducation"
-                    placeholder="About Education"></textarea>
+                    <input type="text"
+                           name="birthPlace"
+                           placeholder="Birth Place">
 
                 </div>
 
                 <div class="input-box">
 
                     <input type="text"
-                           name="postGraduation"
-                           placeholder="Post Graduation">
+                           name="dateAndTimeOfBirth"
+                           placeholder="Date And Time Of Birth">
 
                 </div>
 
                 <div class="input-box">
 
                     <input type="text"
-                           name="underGraduation"
-                           placeholder="Under Graduation">
+                           name="rashi"
+                           placeholder="Rashi">
 
                 </div>
 
                 <button type="submit"
                         class="btn">
 
-                    Save Education
+                    Save Horoscope
 
                 </button>
-                <br><br>
-                
-                <a href="UserRegister.jsp">
-    <button class="back-btn">
-        Back
-    </button>
-    </a>
 
             </form>
 
